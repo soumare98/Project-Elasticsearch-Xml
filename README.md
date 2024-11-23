@@ -22,7 +22,7 @@ http://localhost:9200
 ![image](https://github.com/user-attachments/assets/6a4df9e0-2cc3-4707-8cbb-bc4d0f037959)
 
 ### Étape 3 : Décompression et Analyse XML
-Placez le fichier xml.zip dans le répertoire src/main/resources .
+Placez le fichier xml.zip dans le répertoire src/main/resources
 ![image](https://github.com/user-attachments/assets/e482cfd6-d266-438a-a426-bb09deb30878)
 
 ### Étape 4 : Envoi des données vers Elasticsearch
