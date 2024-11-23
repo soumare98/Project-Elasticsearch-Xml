@@ -48,6 +48,7 @@ Le point d'entrée du programme est la classe **Main**. Cette classe effectue le
 #### 3. Décompression et extraction du fichier XML
 
 - Le fichier `xml.zip` est décompressé et le fichier XML contenu est extrait.
+- le fichier extrait est visible dans /target/output
 
 #### 4. Analyse du fichier XML
 
