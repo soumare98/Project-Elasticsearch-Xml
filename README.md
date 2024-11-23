@@ -32,7 +32,7 @@ Placez le fichier xml.zip dans le répertoire src/main/resources
 Une fois le projet exécuté, On peut vérifier les données indexées
 ![image](https://github.com/user-attachments/assets/89991e2e-7cc8-471e-b75a-d8e891688ab2)
 ![image](https://github.com/user-attachments/assets/70652992-4784-47e6-b7f1-b4506f2c4e4a)
-### Lancement du programme
+### Etape 6 : Lancement du programme
 
 Le point d'entrée du programme est la classe **Main**. Cette classe effectue les étapes suivantes :
 
