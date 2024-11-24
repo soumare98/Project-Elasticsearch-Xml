@@ -1,41 +1,32 @@
 package org.example;
 
-import org.apache.commons.compress.archivers.zip.ZipArchiveEntry;
-import org.apache.commons.compress.archivers.zip.ZipFile;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
-import java.util.Enumeration;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipInputStream;
 
 public class Extaction {
     public static String extractXML(String zipPath, String outputDir) throws Exception {
-        ZipFile zipFile = new ZipFile(new File(zipPath));
-        String xmlFilePath = null;
-        Enumeration<ZipArchiveEntry> entries = zipFile.getEntries();
-        while (entries.hasMoreElements()) {
-            ZipArchiveEntry entry = entries.nextElement();
-
-            if (!entry.isDirectory() && entry.getName().endsWith(".xml")) {
-                File outputFile = new File(outputDir, entry.getName());
-
-
-                outputFile.getParentFile().mkdirs();
-
-                try (InputStream inputStream = zipFile.getInputStream(entry);
-                     FileOutputStream outputStream = new FileOutputStream(outputFile)) {
-                    byte[] buffer = new byte[1024];
-                    int length;
-                    while ((length = inputStream.read(buffer)) > 0) {
-                        outputStream.write(buffer, 0, length);
+        try (ZipInputStream zis = new ZipInputStream(Files.newInputStream(Paths.get(zipPath)))) {
+            ZipEntry entry;
+            while ((entry = zis.getNextEntry()) != null) {
+                if (entry.getName().endsWith(".xml")) {
+                    File outputFile = new File(outputDir, entry.getName());
+                    outputFile.getParentFile().mkdirs();
+                    try (FileOutputStream fos = new FileOutputStream(outputFile)) {
+                        byte[] buffer = new byte[1024];
+                        int len;
+                        while ((len = zis.read(buffer)) > 0) {
+                            fos.write(buffer, 0, len);
+                        }
                     }
+                    return outputFile.getAbsolutePath();
                 }
-                xmlFilePath = outputFile.getAbsolutePath();
             }
         }
-
-        zipFile.close();
-        return xmlFilePath;
+        return null;
     }
-
 }

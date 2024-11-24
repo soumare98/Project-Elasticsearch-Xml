@@ -8,5 +8,5 @@ import java.util.Map;
 @FunctionalInterface
 public interface DataProcessor {
 
-    void processDocument(Map<String, String> document) throws JsonProcessingException;
+    void processDocument(Map<String, String> document);
 }
