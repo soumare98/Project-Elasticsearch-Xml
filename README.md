@@ -26,12 +26,10 @@ Placez le fichier xml.zip dans le répertoire src/main/resources
 ![image](https://github.com/user-attachments/assets/e482cfd6-d266-438a-a426-bb09deb30878)
 
 ### Étape 4 : Envoi des données vers Elasticsearch
-![image](https://github.com/user-attachments/assets/f62a69e6-d67c-4c20-a7bd-e37b7711d9db)
 
 ### Étape 5 : Vérification des données dans Elasticsearch
 Une fois le projet exécuté, On peut vérifier les données indexées
-![image](https://github.com/user-attachments/assets/89991e2e-7cc8-471e-b75a-d8e891688ab2)
-![image](https://github.com/user-attachments/assets/70652992-4784-47e6-b7f1-b4506f2c4e4a)
+![image](https://github.com/user-attachments/assets/7594a6ba-ae4f-411b-9ec3-2443f0800357)
 ### Etape 6 : Lancement du programme
 
 Le point d'entrée du programme est la classe **Main**. Cette classe effectue les étapes suivantes :
